@@ -1,29 +1,51 @@
-# web-dev-starter
+# Web Dev Final
 
-This is a starter project for web development with no frameworks and minimal
-dependencies. It is intended to be a starting point for web development projects
-that are written in plain HTML, CSS, and JavaScript.
+## Requirements
+ - Have a landing page (index.html) 
+ - Have a form on the index that allows you to submit data to AWS
+ - Have a button that retrieves ALL your database entries and displays them on the page
+ - Have a way to delete entries
+ - You must have a separate page (not on your index.html) with a form that submits data to AWS
+ - You must have a way to conditionally retrieve data and display it on a separate page. You can do this any way you wish, 
+   but you can not just return the entire database. 
+ - You can include as many extra pages as you wish there is no limit.
+ - You must have each page styled with custom CSS
+ - You must have authored some tests
+ - All your forms must properly sanitize user input
+ - You must have 80% code coverage of ALL your front end JavaScript
+ - You must have at a minimum of 4 different HTML pages that perform distinct functionality.
+ - 100% of your pages MUST get a perfect lighthouse score for accessibility in chrome (NO EXCEPTIONS AT ALL)
+ - Have between 21+ CSS styles 
 
-## Getting Started
+ ## Project Specification
+ The general theme of my final project is going to be a recipe application. It's going to have a page
+ to display all recipes, search recipes by name, add a new recipe with a dynamic number of steps, and
+ a recipe focused screen for following a specific recipe. My target audience is the generic public.
+ I've hated modern online recipes with a ton of ads and a bunch of nauseating anecdotes that no one cares
+ about. I aim to allow people to build an online recipe book and find new recipes without any of the 
+ annoying fluff. My app will manage lots of text in the database, as recipes are primarily just text
+ based. If I get to it, I'd like to add pictures to the recipes so the database might handle images.
 
-To get started, clone this repository and run the following commands:
+ I imagine that in the home page and the search results page, recipes will be displayed as cards which,
+ when clicked, will expand to the recipe focus page which allows the user to follow the recipe in its'
+ entirety. I also imagine that in the add recipe tab, there will be a default few fields, then have an 
+ option to add instruction fields for longer or more complex recipes. The biggest difficulty I forsee is 
+ figuring out how to store an unkown amount of recipe steps in the database. I'm gonna really strive for 
+ a minimalist look without looking wite washed or like I neglected the visual aspects of the web page.
+ I also intend to add a meatball menu icon to each of the recipe cards which will allow the user to 
+ delete (and potentially save) each recipe.
 
-```bash
-npm install
-```
-This will install the necessary dependencies for the project.
+ Some stretch goals I have for this project include user accounts so users can view their own recipes
+ without affecting a global collection, the ability to share a recipe and auto-populate an email with
+ the recipe so users can share it easily. I think another feature that would be cool to implement is 
+ instead of just spitting the whole database onto the home page, if it showed recommended recipes
+ based on your recipes or your saved recipes using tags to describe them such as "chinese food" or
+ "hearty" or "20 minutes or less" as well as a way to favorite recipes. Yet another cool feature is
+ the ability to save different recipes into different folders. So as a user, I can save a bunch of
+ pasta recipes I like into a pasta collection, and a bunch of mexican recipes I like into a mexican
+ food collection. Similar to playlists in spotify. Since I'm gonna try to make this web page more
+ minimalist, I think it would be cool to allow users to set different colors on the page to their
+ preference, such as making the recipe cards pink or the background red or a more general dark mode.
 
-## Development
-
-It is recommended to use the VSCode Live Server extension to run the project
-locally. This will allow you to see changes in real-time as you make them. There
-is no need to run a build process or refresh the page manually. Additionally,
-you do not need to setup a local server to run the project.
-
-## Testing
-
-To run the tests for the project, run the following command:
-
-```bash
-npm test
-```
+ ## Wireframe Link
+  - https://app.moqups.com/gK1Ak2wHqE0IBMD0XCQ1Xx8k7PMq67Y5/view/page/acc5c0513
