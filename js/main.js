@@ -1,64 +1,50 @@
-/**
- * This file should only contain functions that don't interact with the DOM.
- * That means no document.querySelector, no document.getElementById, etc.
- * This file should only contain functions that do things like calculations,
- * data manipulation, etc. This is so that we can test these functions
- * without having to worry about the DOM or the browser environment.
- */
+const addItem = (event) => {
+    event.preventDefault();
+    const id = document.getElementById("id").value;
+    const price = document.getElementById("price").value;
+    const name = document.getElementById("name").value;
 
-/**
- * This function prints the string 'Hello World' to the console
- */
-export function helloWorld() {
-    console.log('Hello World');
+    let xhr = new XMLHttpRequest();
+    xhr.open("PUT", "https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify({
+        "id": `${id}`,
+        "price": price,
+        "name": `${name}`
+    }));
+
+    event.target.reset();
 }
 
-/**
- * This function adds two numbers together and returns the sum. This demonstrates
- * how to pass parameters to a function and return a value from a function
- * from HTML.
- * @param {number} a The first number to add
- * @param {number} b The second number to add
- * @returns {number} The sum of the two numbers
- */
-export function add(num1, num2) {
-    if (num1 === undefined || num2 === undefined) {
-        throw new Error('You must provide two numbers to add');
-    }
-    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-        throw new Error('You must provide two numbers to add');
-    }
-    return num1 + num2;
-}
+const loadItems = () => {
+    let tableBody = document.getElementById("table-body");
+    let xhr = new XMLHttpRequest();
+    xhr.responseType = "json";
+    xhr.addEventListener("load", function () {
+        for (let i = 0; i < xhr.response.length; i++) {
+            let item = xhr.response[i];
+            let row = tableBody.insertRow(tableBody.rows.length - 1);
+            row.id = item.id;
+            const idCell = row.insertCell();
+            let nameCell = row.insertCell();
+            let priceCell = row.insertCell();
+            let actionCell = row.insertCell();
 
-/**
- * This function fetches a random joke from the "Official Joke API" and returns it.
- * @returns {string} A joke in the format "setup - punchline"
- */
-export async function fetchRandomJoke() {
-    try {
-        const response = await fetch('https://official-joke-api.appspot.com/random_joke');
-        if (!response.ok) {
-            throw new Error('Failed to fetch a joke');
+            idCell.innerText = item.id;
+            nameCell.innerText = item.name;
+            priceCell.innerText = item.price;
+            actionCell.innerHTML = `<button id="delete-data" onClick="deleteItem(${item.id})">Delete</button>`;
         }
-        const joke = await response.json();
-        return `${joke.setup} - ${joke.punchline}`;
-    } catch (error) {
-        throw new Error(error.message);
-    }
+        console.log(xhr.response);
+    });
+    xhr.open("GET", "https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items");
+    xhr.send();
 }
 
-export async function fetch5RandomJokes() {
-    try {
-        // This endpoint returns 10 jokes, so we need to slice the array to get 5
-        const response = await fetch('https://official-joke-api.appspot.com/random_ten');
-        if (!response.ok) {
-            throw new Error('Failed to fetch a joke');
-        }
-        const jokes = await response.json();
-        // Slice the first 5 jokes from the array
-        return jokes.slice(0, 5).map(joke => `${joke.setup} - ${joke.punchline}`);
-    } catch (error) {
-        throw new Error(error.message);
-    }
+const deleteItem = (id) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("DELETE", `https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items/${id}`);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send();
+    document.getElementById(id).remove();
 }
