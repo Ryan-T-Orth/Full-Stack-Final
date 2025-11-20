@@ -53,3 +53,57 @@ const addItem = (event) => {
 
     event.target.reset();
 }
+
+const addIngredient = () => {
+    const ingredients = document.getElementById("ingredients-list");
+    const ingredient = document.createElement("span");
+    ingredient.className = "ingredient";
+    ingredient.innerHTML = `
+        <br>
+
+        <input class="ingredient-name" placeholder="Ingredient" required aria-required>
+                    
+        <input class="ingredient-amount" placeholder="Amount" type="number" required aria-required>
+   
+        <select class="ingredient-measurement" aria-placeholder="Measurement" required aria-required>
+            <option disabled selected>Measurement</option>
+            <optgroup label="Volume">
+                <option value="Pinch">Pinch</option>
+                <option value="Tsp">Tsp</option>
+                <option value="Tbsp">Tbsp</option>
+                <option value="Fl Oz">Fl Oz</option>
+                <option value="Cup">Cups</option>
+                <option value="Pint (US)">Pint (US)</option>
+                <option value="Pint (UK)">Pint (UK)</option>
+                <option value="Quart">Quart</option>
+                <option value="Gal">Gal</option>
+                <option value="mL">mL</option>
+                <option value="L">L</option>
+            </optgroup>
+            <optgroup label="Weight">
+                <option value="Oz">Oz</option>
+                <option value="Lb">Lb</option>
+                <option value="g">g</option>
+            </optgroup>
+        </select>
+        <br>
+    `;
+
+    ingredients.appendChild(ingredient);
+    nextIngredientNum++;
+}
+
+const addStep = () => {
+    const steps = document.getElementById("steps-list");
+    const step = document.createElement("span");
+    step.className = "step";
+    step.innerHTML = `
+        <br>
+        <label for="step-${nextStepNum}">Step ${nextStepNum}: </label>
+        <input class="step-text" id="step-1" name="step-1" placeholder="Step" required aria-required>
+        <br>
+    `;
+
+    steps.appendChild(step);
+    nextStepNum++;
+}

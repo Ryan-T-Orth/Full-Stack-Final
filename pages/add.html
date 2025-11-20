@@ -46,6 +46,7 @@
             <fieldset id="ingredients-list">
                 <legend>Ingredients List</legend>
                 <span class="ingredient">
+                    <br>
                     <input class="ingredient-name" placeholder="Ingredient" required aria-required>
                     
                     <input class="ingredient-amount" placeholder="Amount" type="number" required aria-required>
@@ -72,38 +73,42 @@
                             <option value="g">g</option>
                         </optgroup>
                     </select>
+                    <br>
                 </span>
 
-
-                <br>
-                <br>
-                <br>
-
-                <button id="add-ingredient" type="button">Add Ingredient</button>
-                <button id="delete-ingredient" type="button">Delete Ingredient</button>
             </fieldset>
 
             <br>
 
+            <button id="add-ingredient" type="button" onclick="addIngredient()">Add Ingredient</button>
+            <button id="delete-ingredient" type="button">Delete Ingredient</button>
+
+            <br>
+            <br>
+            <br>
+            <br>
 
             <fieldset id="steps-list">
                 <legend>Steps</legend>
+
                 <span class="step">
+                    <br>
                     <label for="step-1">Step 1: </label>
                     <input class="step-text" id="step-1" name="step-1" placeholder="Step" required aria-required>
+                    <br>
                 </span>
-
-                <br>
-                <br>
-                <br>
                 
-                <button id="add-step" type="button">Add Step</button>
-                <button id="delete-step" type="button">Delete Step</button>
             </fieldset>
+
+            <br>
+
+            <button id="add-step" type="button" onclick="addStep()">Add Step</button>
+            <button id="delete-step" type="button">Delete Step</button>
             
             <br>
             <br>
-            <button id="add-button" type="submit">Add Item</button>
+            <br>
+            <button id="add-button" type="submit">Add Recipe</button>
         </form>
     </div>
 
