@@ -1,11 +1,111 @@
-<header>
-    <h1>ChefIt</h1>
-    <nav>
-        <ul>
-            <li><a href="./pages/index.html">Home</a></li>
-            <li><a href="./add.html">Add a New Recipe</a></li>
-            <li><a href="./search.html">Search Recipes</a></li>
-        </ul>
-    </nav>
-</header>
-<h1>ADD PAGE</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test AWS Lambda</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>ChefIt</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./add.html">Add a New Recipe</a></li>
+                <li><a href="./search.html">Search Recipes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>ADD PAGE</h1>
+    <div id="form-area">
+
+        <form onsubmit="addItem(event)">
+
+            <label for="recipe-name">Name:</label>
+            <input id="recipe-name" name="recipe-name" required>
+
+            <br>
+
+            <label for="time-estimate">Estimated Time (min):</label>
+            <input id="time-estimate" name="time-estimate" type="number" required>
+            
+            <br>
+
+            <label for="recipe-servings">Servings</label>
+            <input name="recipe-servings" id="recipe-servings" required type="number">
+
+            <br>
+            <br>
+            <fieldset id="ingredients-list">
+                <legend>Ingredients List</legend>
+                <span class="ingredient">
+                    <input class="ingredient-name" placeholder="Ingredient" required aria-required>
+                    
+                    <input class="ingredient-amount" placeholder="Amount" type="number" required aria-required>
+
+                    
+                    <select class="ingredient-measurement" aria-placeholder="Measurement" required aria-required>
+                        <option disabled selected>Measurement</option>
+                        <optgroup label="Volume">
+                            <option value="Pinch">Pinch</option>
+                            <option value="Tsp">Tsp</option>
+                            <option value="Tbsp">Tbsp</option>
+                            <option value="Fl Oz">Fl Oz</option>
+                            <option value="Cup">Cups</option>
+                            <option value="Pint (US)">Pint (US)</option>
+                            <option value="Pint (UK)">Pint (UK)</option>
+                            <option value="Quart">Quart</option>
+                            <option value="Gal">Gal</option>
+                            <option value="mL">mL</option>
+                            <option value="L">L</option>
+                        </optgroup>
+                        <optgroup label="Weight">
+                            <option value="Oz">Oz</option>
+                            <option value="Lb">Lb</option>
+                            <option value="g">g</option>
+                        </optgroup>
+                    </select>
+                </span>
+
+
+                <br>
+                <br>
+                <br>
+
+                <button id="add-ingredient" type="button">Add Ingredient</button>
+                <button id="delete-ingredient" type="button">Delete Ingredient</button>
+            </fieldset>
+
+            <br>
+
+
+            <fieldset id="steps-list">
+                <legend>Steps</legend>
+                <span class="step">
+                    <label for="step-1">Step 1: </label>
+                    <input class="step-text" id="step-1" name="step-1" placeholder="Step" required aria-required>
+                </span>
+
+                <br>
+                <br>
+                <br>
+                
+                <button id="add-step" type="button">Add Step</button>
+                <button id="delete-step" type="button">Delete Step</button>
+            </fieldset>
+            
+            <br>
+            <br>
+            <button id="add-button" type="submit">Add Item</button>
+        </form>
+    </div>
+
+    <script src="../js/add.js"></script>
+</body>

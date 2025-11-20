@@ -1,23 +1,6 @@
-const addItem = (event) => {
-    event.preventDefault();
-    const id = document.getElementById("id").value;
-    const price = document.getElementById("price").value;
-    const name = document.getElementById("name").value;
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("PUT", "https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify({
-        "id": `${id}`,
-        "price": price,
-        "name": `${name}`
-    }));
-
-    event.target.reset();
-}
-
 const loadItems = () => {
     let tableBody = document.getElementById("table-body");
+    tableBody.innerHTML = '';
     let xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.addEventListener("load", function () {
