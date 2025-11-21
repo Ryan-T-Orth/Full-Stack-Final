@@ -107,3 +107,27 @@ const addStep = () => {
     steps.appendChild(step);
     nextStepNum++;
 }
+
+const deleteIngredient = () => {
+    const ingredients = document.getElementsByClassName("ingredient");
+    
+    if (nextIngredientNum === 2 || ingredients.length === 1) {
+        alert("Recipes need at least 1 ingredient silly!");
+        return;
+    }
+
+    ingredients[ingredients.length - 1].remove();
+    nextIngredientNum--;
+}
+
+const deleteStep = () => {
+    const steps = document.getElementsByClassName("step");
+    
+    if (nextStepNum === 2 || steps.length === 1) {
+        alert("Recipes need at least 1 step silly!");
+        return;
+    }
+
+    steps[steps.length - 1].remove();
+    nextStepNum--;
+}
