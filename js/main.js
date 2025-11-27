@@ -1,22 +1,31 @@
 const loadItems = () => {
-    let tableBody = document.getElementById("table-body");
-    tableBody.innerHTML = '';
+    let grid = document.getElementById("recipe-grid");
+    grid.innerHTML = '';
     let xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.addEventListener("load", function () {
         for (let i = 0; i < xhr.response.length; i++) {
-            let item = xhr.response[i];
-            let row = tableBody.insertRow(tableBody.rows.length - 1);
-            row.id = item.id;
-            const idCell = row.insertCell();
-            let nameCell = row.insertCell();
-            let priceCell = row.insertCell();
-            let actionCell = row.insertCell();
+            let recipe = xhr.response[i];
 
-            idCell.innerText = item.id;
-            nameCell.innerText = item.name;
-            priceCell.innerText = item.price;
-            actionCell.innerHTML = `<button id="delete-data" onClick="deleteItem(${item.id})">Delete</button>`;
+            console.log(recipe.time);
+
+            let recipeCard = document.createElement("a");
+            
+            const url = new URL("pages/recipe.html", window.location.href);
+            url.searchParams.set("id", recipe.id);
+            
+            recipeCard.href=url.toString();
+
+            recipeCard.innerHTML = `
+                <div class="recipe-inner">
+                    <h3 id="recipe-name">${recipe.name}</h3>
+                    <p>${recipe.time} Mins</p>
+                </div>
+            `;
+
+            grid.appendChild(recipeCard);
+            
+            // actionCell.innerHTML = `<button id="delete-data" onClick="deleteItem(${recipe.id})">Delete</button>`;
         }
         console.log(xhr.response);
     });
