@@ -59,7 +59,6 @@ const addIngredient = () => {
     const ingredient = document.createElement("span");
     ingredient.className = "ingredient";
     ingredient.innerHTML = `
-        <br>
 
         <input class="ingredient-name" placeholder="Ingredient" required aria-required>
                     

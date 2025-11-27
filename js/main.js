@@ -14,7 +14,7 @@ const loadItems = () => {
             const url = new URL("pages/recipe.html", window.location.href);
             url.searchParams.set("id", recipe.id);
             
-            recipeCard.href=url.toString();
+            recipeCard.href = url.toString();
 
             recipeCard.innerHTML = `
                 <div class="recipe-inner">

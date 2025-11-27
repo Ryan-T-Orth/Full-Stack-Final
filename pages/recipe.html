@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/recipe.css">
 </head>
 
-<body onload="">
+<body onload="loadRecipe()">
     <header>
         <h1>ChefIt</h1>
         <nav>
@@ -22,19 +22,19 @@
         </nav>
     </header>
 
-    <div id="ingredients">
-        <h2>Ingredients</h2>
-        <ul id="ingredients-list">
+    <h2 id="recipe-name"></h2>
+    <p id="recipe-time"></p>
+    <p id="recipe-servings"></p>
 
-        </ul>
-    </div>
+    <h3>Ingredients</h3>
+    <ul id="ingredients-list">
 
-    <div id="steps">
-        <h2>Steps</h2>
-        <ul id="steps-list">
+    </ul>
 
-        </ul>
-    </div>
+    <h3>Steps</h3>
+    <ul id="steps-list">
+
+    </ul>
 
 
     <script src="../js/recipe.js"></script>
