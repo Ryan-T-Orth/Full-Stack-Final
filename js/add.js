@@ -1,6 +1,23 @@
 let nextIngredientNum = 2;
 let nextStepNum = 2;
 
+const escapeMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;',
+    '`': '&#x60;',
+    '=': '&#x3D;'
+}
+
+function escapeHTML (string) {
+    return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+        return escapeMap[s];
+    });
+}
+
 const addItem = (event) => {
     event.preventDefault();
 
@@ -17,7 +34,7 @@ const addItem = (event) => {
     let ingredient;
     for (let i = 0; i < ingredientsList.length; i++) {
         ingredient = ingredientsList[i];
-        let ingredientName = ingredient.children[0].value;
+        let ingredientName = escapeHTML(ingredient.children[0].value);
         let ingredientAmount = ingredient.children[1].value;
         let ingredientMeasurement = ingredient.children[2].value;
         ingredients.push({name: `${ingredientName}`, amount: `${ingredientAmount}`, measurement: `${ingredientMeasurement}`});
@@ -26,7 +43,7 @@ const addItem = (event) => {
     let step;
     for (let i = 0; i < stepsList.length; i++) {
         step = stepsList[i];
-        let instruction = step.children[1].value;
+        let instruction = escapeHTML(step.children[1].value);
         steps.push(`${instruction}`);
     }
 
