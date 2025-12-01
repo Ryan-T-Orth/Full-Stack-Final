@@ -7,7 +7,7 @@
     <title>Test AWS Lambda</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/search.css">
 </head>
 
 <body>
@@ -23,5 +23,14 @@
     </header>
     <h1>SEARCH PAGE</h1>
 
-    <script src="js/main.js"></script>
+    <form onsubmit="handleSubmit(event)">
+        <input aria-label="search bar" placeholder="Search" name="search-bar" id="search-bar">
+        <button type="submit">Enter</button>
+    </form>
+
+    <div id="search-results">
+
+    </div>
+
+    <script src="../js/search.js"></script>
 </body>
