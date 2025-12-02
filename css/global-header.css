@@ -1,0 +1,60 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    position: relative;
+    display: flex;
+    height: 7%;
+    margin: 0px;
+    background-color: rgba(244, 240, 231);
+    padding-bottom: 0px;
+}
+
+nav {
+    right: 40%;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    width: 40%;
+    height: 100%;
+}
+
+nav ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0px;
+    height: 100%;
+}
+
+nav ul li {
+    width: 33%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    height: 100%;
+    color:rgba(74, 46, 30);
+}
+
+.nav-div {
+    height: 100%;
+    width: 100%;
+    align-content: center;
+}
+
+.nav-div:hover {
+    background-color: rgb(232, 144, 59);
+}
+
+#logo {
+    width: 7%;
+    height: 7%;
+    margin-left: 10%
+}

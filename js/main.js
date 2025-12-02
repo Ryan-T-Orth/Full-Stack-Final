@@ -7,8 +7,6 @@ const loadItems = () => {
         for (let i = 0; i < xhr.response.length; i++) {
             let recipe = xhr.response[i];
 
-            console.log(recipe.time);
-
             let recipeCard = document.createElement("a");
             
             const url = new URL("pages/recipe.html", window.location.href);
@@ -17,11 +15,10 @@ const loadItems = () => {
             recipeCard.href = url.toString();
 
             recipeCard.innerHTML = `
-                <div class="recipe-inner">
-                    <h3 id="recipe-name">${recipe.name}</h3>
+                <div class="recipe-div">
+                    <h3 class="recipe-name">${recipe.name}</h3>
                     <p>${recipe.time} Mins</p>
-                </div>
-            `;
+                </div>`;
 
             grid.appendChild(recipeCard);
             
