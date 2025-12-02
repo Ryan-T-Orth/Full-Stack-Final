@@ -1,3 +1,24 @@
+const quips = [
+    "Taste Something New",
+    "Find Your Next Favorite",
+    "Revisit A Classic",
+    "Spice Up Your Routine",
+    "Satisfy Your Cravings",
+    "Find Meals Worth Making",
+    "Get Inspired, Get Hungry",
+    "Serve Up Something New",
+    "Elevate Your Home Cooking",
+    "New Eats Await",
+    "Culinary Adventure Awaits",
+    "Cook Something New Tonight",
+    "Explore Bold New Flavors",
+    "Level Up Your Leftovers",
+    "Dinner Just Got Interesting",
+    "Something For Everyone",
+    "No Ads, No Regerts",
+    "Big Flavor, Little Hassle",
+];
+
 const loadItems = () => {
     let grid = document.getElementById("recipe-grid");
     grid.innerHTML = '';
@@ -7,33 +28,37 @@ const loadItems = () => {
         for (let i = 0; i < xhr.response.length; i++) {
             let recipe = xhr.response[i];
 
-            let recipeCard = document.createElement("a");
+            let recipeCard = document.createElement("div");
+            recipeCard.className = "recipe-div";
             
             const url = new URL("pages/recipe.html", window.location.href);
             url.searchParams.set("id", recipe.id);
-            
-            recipeCard.href = url.toString();
 
             recipeCard.innerHTML = `
-                <div class="recipe-div">
-                    <h3 class="recipe-name">${recipe.name}</h3>
-                    <p>${recipe.time} Mins</p>
-                </div>`;
+                    <a href="${url.toString()}"><h3 class="recipe-name">${recipe.name}</h3></a>
+                    <button type="button" class="delete-button" onClick="deleteItem(${recipe.id})">Delete</button>
+                    <p class="recipe-time">${recipe.time} Mins</p>`;
 
             grid.appendChild(recipeCard);
-            
-            // actionCell.innerHTML = `<button id="delete-data" onClick="deleteItem(${recipe.id})">Delete</button>`;
         }
         console.log(xhr.response);
     });
     xhr.open("GET", "https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items");
     xhr.send();
-}
+};
 
 const deleteItem = (id) => {
     let xhr = new XMLHttpRequest();
     xhr.open("DELETE", `https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items/${id}`);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
-    document.getElementById(id).remove();
-}
+};
+
+const randomQuip = () => {
+    document.getElementById("discover-title").innerText = quips[Math.floor(Math.random() * quips.length)];
+};
+
+function onLoad () {
+    randomQuip();
+    loadItems();
+};
