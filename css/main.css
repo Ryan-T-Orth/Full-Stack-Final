@@ -29,10 +29,16 @@ h2 {
     background-color: rgba(244, 240, 231);
     box-shadow: 5px 5px 10px rgba(100, 100, 100, 0.3);
     border-radius: 15px;
+    transition: transform .1s;
+}
+
+#recipe-grid a:hover {
+    box-shadow:  5px 5px 10px rgba(232, 144, 59);
+    transform: scale(1.1);
 }
 
 .recipe-div * {
-    padding: 5%;
+    margin:10%;
 }
 
 .recipe-name {

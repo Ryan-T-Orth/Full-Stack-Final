@@ -1,23 +1,25 @@
 body {
     margin: 0px;
     padding: 0px;
+    background-color: rgba(250, 255, 250);
 }
 
 header {
     position: relative;
     display: flex;
-    height: 7%;
+    height: 60px;
     margin: 0px;
     background-color: rgba(244, 240, 231);
     padding-bottom: 0px;
+    justify-content: left;
 }
 
 nav {
-    right: 40%;
+    left: 10%;
     margin: 0px;
     padding: 0px;
     position: absolute;
-    width: 40%;
+    width: 30%;
     height: 100%;
 }
 
@@ -54,7 +56,6 @@ nav ul li a {
 }
 
 #logo {
-    width: 7%;
-    height: 7%;
-    margin-left: 10%
+    margin-bottom: 3px; 
+    margin-left: 5%
 }
