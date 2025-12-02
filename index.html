@@ -12,20 +12,19 @@
     <link rel="icon" type="image/png" href="./img/icon.png">
 </head>
 
-<body>
+<body">
     <header>
         <img id="logo" src="./img/logo.png" alt="Image of a chef hat with the words 'Chef It Recipe Book'">
         <nav>
-            
             <a href="./index.html"><div class="nav-div"><strong>Home</strong></div></a>
             <a href="./pages/add.html"><div class="nav-div"><strong>New Recipe</strong></div></a>
             <a href="./pages/search.html"><div class="nav-div"><strong>Search</strong></div></a>
         </nav>
     </header>
 
-    <div id="discover-header">
-        <h2>Discover</h2>
-        <button id="load-button" onclick="loadItems()">Load Data</button>
+    <div id="discover-container">
+        <h2 id="discover-title"></h2>
+        <button id="load-button" onclick="loadItems()"><strong>Load Recipes</strong></button>
     </div>
 
     <div id="recipe-grid">

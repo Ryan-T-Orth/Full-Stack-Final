@@ -1,3 +1,6 @@
+/*/////////////////////////*/
+
+/* BODY AND NAV BAR STYLES */
 body {
     margin: 0px;
     padding: 0px;
@@ -30,7 +33,7 @@ nav {
 nav a {
     display: inline-block;
     text-decoration: none;
-    width: 90px;
+    width: 120px;
     height: 100%;
     color:rgba(74, 46, 30);
     height: 100%;
@@ -38,7 +41,7 @@ nav a {
 
 .nav-div {
     height: 100%;
-    width: 90px;
+    width: 120px;
     align-content: center;
     text-align:center;
 }
@@ -52,4 +55,17 @@ nav a {
     width:50px;
     top: 5px;
     left: 100px;
+}
+
+
+
+/* BUTTON STYLES */
+button {
+    background-color: rgb(232, 144, 59);
+    color: inherit;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: auto;
+    cursor: pointer;
 }

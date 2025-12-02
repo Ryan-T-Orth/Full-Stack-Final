@@ -7,8 +7,30 @@ html {
     font-size: medium;
 }
 
-h2 {
-    font-size: 1.5rem;
+#discover-container {
+    margin: 50px;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    width: 80%;
+    height: 100px;
+}
+
+#load-button {
+    position: absolute;
+    align-self: center;
+    right: 0px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#discover-title {
+    position: absolute;
+    margin: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
 }
 
 #recipe-grid {
@@ -19,12 +41,8 @@ h2 {
     gap: 2.5%;
 }
 
-#recipe-grid a {
-
-    /* REMOVE ALL LINK STYLING BEFORE APPLYING CUSTOM STYLES */
-    all: unset;
-
-    /* THEN APPLY CUSTOM STYLES */
+.recipe-div {
+    position: relative;
     height: 200px;
     background-color: rgba(244, 240, 231);
     box-shadow: 5px 5px 10px rgba(100, 100, 100, 0.3);
@@ -32,15 +50,47 @@ h2 {
     transition: transform .1s;
 }
 
-#recipe-grid a:hover {
+.recipe-div:hover {
     box-shadow:  5px 5px 10px rgba(232, 144, 59);
     transform: scale(1.1);
 }
 
 .recipe-div * {
-    margin:10%;
+    margin: 1em;
 }
 
 .recipe-name {
-    font-size: 1.5rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 70%;
+    max-height: 4em;
+    line-height: 1.5em;
+    overflow: hidden;
+    font-size: 1.25rem;
+    text-decoration:none;
+    color: inherit;
+}
+
+.recipe-name::after {
+    content: '';
+    position: absolute;
+    top: 2.75em;
+    left: 0;
+    width: 100%;
+    height: 1.25em; /* Adjust this value to control the fade area height */
+    background: linear-gradient(to bottom, rgba(244, 240, 231, 0), rgba(244, 240, 231, 1)); /* Fades from transparent to white (or your background color) */
+    pointer-events: none; /* Allows interaction with text underneath */
+}
+
+.delete-button {
+    position:absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.recipe-time {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
