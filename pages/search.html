@@ -21,12 +21,13 @@
             <a href="./search.html"><div class="nav-div"><strong>Search</strong></div></a>
         </nav>
     </header>
-    <h1>SEARCH PAGE</h1>
-
-    <form onsubmit="handleSubmit(event)">
-        <input aria-label="search bar" placeholder="Search" name="search-bar" id="search-bar">
-        <button type="submit">Enter</button>
-    </form>
+    <div id="search-container">
+        <h3 id="search-title">Quip</h3>
+        <form id="search-form" onsubmit="handleSubmit(event)">
+            <input aria-label="search bar" placeholder="Search" name="search-bar" id="search-bar">
+            <button id="search-button" type="submit">Enter</button>
+        </form>
+    </div>
 
     <div id="search-results">
 

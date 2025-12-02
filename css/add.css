@@ -1,1 +1,33 @@
 
+
+
+
+
+
+#content-title-container {
+    margin: 50px;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    width: 80%;
+    height: 100px;
+}
+
+#content-title {
+    position: absolute;
+    margin: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+#form-area {
+    width: 50%;
+    justify-self: center;
+    justify-content: center;
+}
+
+#form-area * {
+    justify-self: center;
+}

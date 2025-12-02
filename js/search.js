@@ -17,23 +17,18 @@ function handleSubmit(event) {
                 continue;
             }
 
-            let recipeCard = document.createElement("a");
+           let recipeCard = document.createElement("div");
+            recipeCard.className = "recipe-div";
             
-            const url = new URL("./recipe.html", window.location.href);
+            const url = new URL("recipe.html", window.location.href);
             url.searchParams.set("id", recipe.id);
-            
-            recipeCard.href = url.toString();
 
             recipeCard.innerHTML = `
-                <div class="recipe-inner">
-                    <h3 id="recipe-name">${recipe.name}</h3>
-                    <p>${recipe.time} Mins</p>
-                </div>
-            `;
+                    <a href="${url.toString()}"><h3 class="recipe-name">${recipe.name}</h3></a>
+                    <button type="button" class="delete-button" onClick="deleteItem(${recipe.id})">Delete</button>
+                    <p class="recipe-time">${recipe.time} Mins</p>`;
 
             results.appendChild(recipeCard);
-            
-            // actionCell.innerHTML = `<button id="delete-data" onClick="deleteItem(${recipe.id})">Delete</button>`;
         }
         console.log(xhr.response);
     });
