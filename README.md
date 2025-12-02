@@ -7,17 +7,17 @@
   - [x] Have a landing page (index.html) 
   - [x] Have a form on the index that allows you to submit data to AWS
   - [x] Have a button that retrieves ALL your database entries and displays them on the page
-  - [ ] Have a way to delete entries
-  - [ ] Have between 2-5 CSS styles 
+  - [x] Have a way to delete entries
+  - [x] Have between 2-5 CSS styles 
 - To get a B- on this project you need to do the following:
-  - [ ] You must complete 100% of the requirements of  the C- project
+  - [x] You must complete 100% of the requirements of  the C- project
   - [x] You must have at least 3 distinct pages, you can not have everything implemented in index.
   - [x] You must have a separate page (not on your index.html) with a form that submits data to AWS
-  - [x] You must have a way to conditionally retrieve data and display it on a separate page. You can do this any way you wish, but you can not just return the entire database. 
-You can include as many extra pages as you wish there is no limit.
-  - [ ] Have between 6-10 CSS styles 
+  - [x] You must have a way to conditionally retrieve data and display it on a separate page. 
+    - You can do this any way you wish, but you can not just return the entire database. You can include as many extra pages as you wish there is no limit.
+  - [x] Have between 6-10 CSS styles 
 - To get an B on this project you need to do the following:
-  - [ ] You must complete 100% of the requirements of  the B- project
+  - [x] You must complete 100% of the requirements of  the B- project
   - [ ] You must have each page styled with custom CSS
   - [ ] You must have authored some tests
   - [ ] Have between 11-15 CSS styles 
