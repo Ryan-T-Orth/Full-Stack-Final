@@ -1,5 +1,11 @@
 /*/////////////////////////*/
 
+/* TEXT STYLE */
+* {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgba(74, 46, 30);
+}
+
 /* BODY AND NAV BAR STYLES */
 body {
     margin: 0px;

@@ -48,6 +48,7 @@ const loadItems = () => {
 };
 
 const deleteItem = (id) => {
+    if (!confirm("Are you sure you want to delete this recipe?")) return;
     let xhr = new XMLHttpRequest();
     xhr.open("DELETE", `https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items/${id}`);
     xhr.setRequestHeader("Content-Type", "application/json");

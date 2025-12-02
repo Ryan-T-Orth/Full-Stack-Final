@@ -1,8 +1,3 @@
-* {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: rgba(74, 46, 30);
-}
-
 html {
     font-size: medium;
 }
@@ -75,10 +70,10 @@ html {
 .recipe-name::after {
     content: '';
     position: absolute;
-    top: 2.75em;
+    top: 2.5em;
     left: 0;
     width: 100%;
-    height: 1.25em; /* Adjust this value to control the fade area height */
+    height: 1.5em; /* Adjust this value to control the fade area height */
     background: linear-gradient(to bottom, rgba(244, 240, 231, 0), rgba(244, 240, 231, 1)); /* Fades from transparent to white (or your background color) */
     pointer-events: none; /* Allows interaction with text underneath */
 }
