@@ -40,10 +40,14 @@ const addItem = (event) => {
         ingredients.push({name: `${ingredientName}`, amount: `${ingredientAmount}`, measurement: `${ingredientMeasurement}`});
     }
 
+    console.log(stepsList);
+
     let step;
     for (let i = 0; i < stepsList.length; i++) {
         step = stepsList[i];
+        console.log(step);
         let instruction = escapeHTML(step.children[1].value);
+        console.log(instruction);
         steps.push(`${instruction}`);
     }
 
@@ -116,7 +120,7 @@ const addStep = () => {
     step.innerHTML = `
         <br>
         <label for="step-${nextStepNum}">Step ${nextStepNum}: </label>
-        <input class="step-text" id="step-1" name="step-1" placeholder="Step" required aria-required>
+        <input class="step-text" id="step-${nextStepNum}" name="step-${nextStepNum}" placeholder="Step" required aria-required>
         <br>
     `;
 

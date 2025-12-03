@@ -1,8 +1,16 @@
-import {helloWorld, add} from '../js/main.js';
+import {loadItems, deleteItem, randomQuip, onLoad} from '../js/main.js';
+import {escapeHTML, addItem, addIngredient, addStep, deleteIngredient, deleteStep} from '../js/add.js';
+import {handleSubmit} from '../js/search.js';
+import {loadRecipe} from '../js/recipe.js';
+
 // Import the sinon library to allow us to create a spy on the console.log function
 import sinon from 'sinon';
 
 QUnit.module('main.js tests', function() {
+
+    hooks.beforeEach(() => {
+        fixture = document.getElementById("qunit-fixture");
+    });
 
     QUnit.test('helloWorld should print Hello World to the console', function(assert) {
         //Arrange
@@ -14,37 +22,33 @@ QUnit.module('main.js tests', function() {
         consoleSpy.restore();
     });
 
-    QUnit.test('add should return the sum of two numbers', function(assert) {
-        //Arrange
-        const num1 = 2;
-        const num2 = 3;
-        const expected = 5;
-        //Act
-        const result = add(num1, num2);
-        //Assert
-        assert.equal(result, expected, 'add(2, 3) should return 5');
+    
+
+});
+
+
+QUnit.module('add.js tests', function() {
+
+    hooks.beforeEach(() => {
+        fixture = document.getElementById("qunit-fixture");
     });
 
-    QUnit.test('add should return the sum of negative numbers', function(assert) {
-        //Arrange
-        const num1 = -2;
-        const num2 = -3;
-        const expected = -5;
-        //Act
-        const result = add(num1, num2);
-        //Assert
-        assert.equal(result, expected, 'add(-2, -3) should return -5');
-    });
+});
 
-    QUnit.test('add should return the sum of a positive and a negative number', function(assert) {
-        //Arrange
-        const num1 = 2;
-        const num2 = -3;
-        const expected = -1;
-        //Act
-        const result = add(num1, num2);
-        //Assert
-        assert.equal(result, expected, 'add(2, -3) should return -1');
-    });
 
+QUnit.module('search.js tests', function() {
+
+    hooks.beforeEach(() => {
+        fixture = document.getElementById("qunit-fixture");
+    });
+    
+});
+
+
+QUnit.module('recipe.js tests', function() {
+
+    hooks.beforeEach(() => {
+        fixture = document.getElementById("qunit-fixture");
+    });
+    
 });

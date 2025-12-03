@@ -18,9 +18,9 @@
   - [x] Have between 6-10 CSS styles 
 - To get an B on this project you need to do the following:
   - [x] You must complete 100% of the requirements of  the B- project
-  - [ ] You must have each page styled with custom CSS
+  - [x] You must have each page styled with custom CSS
   - [ ] You must have authored some tests
-  - [ ] Have between 11-15 CSS styles 
+  - [x] Have between 11-15 CSS styles 
 - To get an A- on this project you need to do the following:
   - [ ] You must complete 100% of the requirements of  the B project
   - [ ] All your forms must properly sanitize user input

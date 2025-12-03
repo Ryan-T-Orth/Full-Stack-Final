@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ad Free Recipe Book App">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chef It</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/global-styles.css">
+    <link rel="icon" type="image/png" href="./img/icon.png">
+</head>
+
+<body>
+
+
+    <div id="qunit-fixture">
+        
+        <!-- INDEX.HTML TESTING STUFF -->
+        <div id="discover-container">
+            <h2 id="discover-title"></h2>
+            <button id="load-button" onclick="loadItems()"><strong>Load Recipes</strong></button>
+        </div>
+        
+        <div id="recipe-grid">
+            
+        </div> 
+        
+        
+        
+        <!-- ADD.HTML TESTING STUFF -->
+         <div id="form-area">
+
+            <form onsubmit="addItem(event)">
+
+                <label for="recipe-name">Name:</label>
+                <input id="recipe-name" name="recipe-name" type="text" required>
+
+                <br>
+
+                <label for="time-estimate">Estimated Time (min):</label>
+                <input id="time-estimate" name="time-estimate" type="number" required>
+                
+                <br>
+
+                <label for="recipe-servings">Servings</label>
+                <input name="recipe-servings" id="recipe-servings" required type="number">
+
+                <br>
+                <br>
+                <fieldset id="ingredients-list">
+                    <legend>Ingredients List</legend>
+                    <span class="ingredient">
+                        <input class="ingredient-name" placeholder="Ingredient" required aria-required>
+                        
+                        <input class="ingredient-amount" placeholder="Amount" type="number" required aria-required>
+
+                        
+                        <select class="ingredient-measurement" aria-label="Ingredient Measurement" required aria-required>
+                            <option disabled selected>Measurement</option>
+                            <optgroup label="Volume">
+                                <option value="Pinch">Pinch</option>
+                                <option value="Tsp">Tsp</option>
+                                <option value="Tbsp">Tbsp</option>
+                                <option value="Fl Oz">Fl Oz</option>
+                                <option value="Cup">Cups</option>
+                                <option value="Pint (US)">Pint (US)</option>
+                                <option value="Pint (UK)">Pint (UK)</option>
+                                <option value="Quart">Quart</option>
+                                <option value="Gal">Gal</option>
+                                <option value="mL">mL</option>
+                                <option value="L">L</option>
+                            </optgroup>
+                            <optgroup label="Weight">
+                                <option value="Oz">Oz</option>
+                                <option value="Lb">Lb</option>
+                                <option value="g">g</option>
+                            </optgroup>
+                        </select>
+                        <br>
+                    </span>
+
+                </fieldset>
+
+                <br>
+
+                <button id="add-ingredient" type="button" onclick="addIngredient()">Add Ingredient</button>
+                <button id="delete-ingredient" type="button" onclick="deleteIngredient()">Delete Ingredient</button>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <fieldset id="steps-list">
+                    <legend>Steps</legend>
+
+                    <span class="step">
+                        <label for="step-1">Step 1: </label>
+                        <textarea class="step-text" id="step-1" name="step-1" placeholder="Step" required aria-required></textarea>
+                        <br>
+                    </span>
+                    
+                </fieldset>
+
+                <br>
+
+                <button id="add-step" type="button" onclick="addStep()">Add Step</button>
+                <button id="delete-step" type="button" onclick="deleteStep()">Delete Step</button>
+                
+                <br>
+                <br>
+                <br>
+                <button id="add-button" type="submit">Add Recipe</button>
+            </form>
+        </div>
+
+
+
+
+        <!-- SEARCH.HTML TESTING STUFF -->
+        <div id="search-container">
+            <h3 id="search-title">Quip</h3>
+            <form id="search-form" onsubmit="handleSubmit(event)">
+                <input aria-label="search bar" placeholder="Search" name="search-bar" id="search-bar">
+                <button id="search-button" type="submit">Enter</button>
+            </form>
+        </div>
+
+        <div id="search-results">
+
+        </div>
+
+
+
+
+
+        <!-- RECIPE.HTML TESTING STUFF -->
+        <h2 id="recipe-name"></h2>
+        <p id="recipe-time"></p>
+        <p id="recipe-servings"></p>
+
+        <h3>Ingredients</h3>
+        <ul id="ingredients-list">
+
+        </ul>
+
+        <h3>Steps</h3>
+        <ul id="steps-list">
+
+        </ul>
+        
+
+    </div>
+
+
+
+    <script src="./test.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/add.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/recipe.js"></script>
+</body>
+
+</html>
