@@ -12,7 +12,7 @@ const escapeMap = {
     '=': '&#x3D;'
 }
 
-function escapeHTML (string) {
+function escapeHTML(string) {
     return String(string).replace(/[&<>"'`=\/]/g, function (s) {
         return escapeMap[s];
     });
@@ -26,7 +26,7 @@ const addItem = (event) => {
     const timeEstimate = document.getElementById("time-estimate").value;
     const recipeServings = document.getElementById("recipe-servings").value;
     const ingredientsList = document.getElementsByClassName("ingredient");
-    const stepsList = document.getElementsByClassName("step");
+    const stepsList = document.getElementsByClassName("step-text");
 
     let ingredients = [];
     let steps = [];
@@ -37,7 +37,7 @@ const addItem = (event) => {
         let ingredientName = escapeHTML(ingredient.children[0].value);
         let ingredientAmount = ingredient.children[1].value;
         let ingredientMeasurement = ingredient.children[2].value;
-        ingredients.push({name: `${ingredientName}`, amount: `${ingredientAmount}`, measurement: `${ingredientMeasurement}`});
+        ingredients.push({ name: `${ingredientName}`, amount: `${ingredientAmount}`, measurement: `${ingredientMeasurement}` });
     }
 
     console.log(stepsList);
@@ -46,7 +46,7 @@ const addItem = (event) => {
     for (let i = 0; i < stepsList.length; i++) {
         step = stepsList[i];
         console.log(step);
-        let instruction = escapeHTML(step.children[1].value);
+        let instruction = escapeHTML(step.value);
         console.log(instruction);
         steps.push(`${instruction}`);
     }
@@ -130,7 +130,7 @@ const addStep = () => {
 
 const deleteIngredient = () => {
     const ingredients = document.getElementsByClassName("ingredient");
-    
+
     if (nextIngredientNum === 2 || ingredients.length === 1) {
         alert("Recipes need at least 1 ingredient silly!");
         return;
@@ -142,7 +142,7 @@ const deleteIngredient = () => {
 
 const deleteStep = () => {
     const steps = document.getElementsByClassName("step");
-    
+
     if (nextStepNum === 2 || steps.length === 1) {
         alert("Recipes need at least 1 step silly!");
         return;
