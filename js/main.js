@@ -30,13 +30,14 @@ const loadItems = () => {
 
             let recipeCard = document.createElement("div");
             recipeCard.className = "recipe-div";
-            
+            recipeCard.tabIndex = 0;
+
             const url = new URL("pages/recipe.html", window.location.href);
             url.searchParams.set("id", recipe.id);
 
             recipeCard.innerHTML = `
                     <a href="${url.toString()}"><h3 class="recipe-name">${recipe.name}</h3></a>
-                    <button type="button" class="delete-button" onClick="deleteItem(${recipe.id})">Delete</button>
+                    <i type="button" class="material-icons delete-button" onClick="deleteItem(${recipe.id})">delete</i>
                     <p class="recipe-time">${recipe.time} Mins</p>`;
 
             grid.appendChild(recipeCard);
@@ -59,7 +60,7 @@ const randomQuip = () => {
     document.getElementById("discover-title").innerText = quips[Math.floor(Math.random() * quips.length)];
 };
 
-function onLoad () {
+function onLoad() {
     randomQuip();
     loadItems();
 };
