@@ -43,6 +43,7 @@ html {
     box-shadow: 5px 5px 10px rgba(100, 100, 100, 0.3);
     border-radius: 15px;
     transition: transform .1s;
+    margin-bottom: 20px;
 }
 
 .recipe-div:hover {

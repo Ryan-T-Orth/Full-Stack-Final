@@ -77,15 +77,15 @@ const addItem = (event) => {
 
 const addIngredient = () => {
     const ingredients = document.getElementById("ingredients-list");
-    const ingredient = document.createElement("span");
+    const ingredient = document.createElement("div");
     ingredient.className = "ingredient";
     ingredient.innerHTML = `
 
-        <input class="ingredient-name" placeholder="Ingredient" required aria-required>
+        <input name="ingredient-name" class="ingredient-name" placeholder="Ingredient" required aria-required>
                     
-        <input class="ingredient-amount" placeholder="Amount" type="number" required aria-required>
+        <input name="ingredient-amount" class="ingredient-amount" placeholder="Amount" type="number" required aria-required>
    
-        <select class="ingredient-measurement" aria-placeholder="Measurement" required aria-required>
+        <select name="ingredient-measurement" class="ingredient-measurement" aria-placeholder="Measurement" required aria-required>
             <option disabled selected>Measurement</option>
             <optgroup label="Volume">
                 <option value="Pinch">Pinch</option>
@@ -115,13 +115,11 @@ const addIngredient = () => {
 
 const addStep = () => {
     const steps = document.getElementById("steps-list");
-    const step = document.createElement("span");
-    step.className = "step";
+    const step = document.createElement("div");
+    step.className = "step form-group";
     step.innerHTML = `
-        <br>
-        <label for="step-${nextStepNum}">Step ${nextStepNum}: </label>
-        <input class="step-text" id="step-${nextStepNum}" name="step-${nextStepNum}" placeholder="Step" required aria-required>
-        <br>
+        <label class="step-label" for="step-${nextStepNum}">Step ${nextStepNum}: </label>
+        <textarea class="step-text" id="step-${nextStepNum}" name="step-${nextStepNum}" placeholder="Step" required aria-required></textarea>
     `;
 
     steps.appendChild(step);
