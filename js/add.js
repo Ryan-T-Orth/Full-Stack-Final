@@ -18,7 +18,7 @@ function escapeHTML(string) {
     });
 }
 
-const addItem = (event) => {
+function addItem(event) {
     event.preventDefault();
 
     const UUID = Date.now();
@@ -75,7 +75,7 @@ const addItem = (event) => {
     event.target.reset();
 }
 
-const addIngredient = () => {
+function addIngredient() {
     const ingredients = document.getElementById("ingredients-list");
     const ingredient = document.createElement("div");
     ingredient.className = "ingredient";
@@ -113,7 +113,7 @@ const addIngredient = () => {
     nextIngredientNum++;
 }
 
-const addStep = () => {
+function addStep() {
     const steps = document.getElementById("steps-list");
     const step = document.createElement("div");
     step.className = "step form-group";
@@ -126,7 +126,7 @@ const addStep = () => {
     nextStepNum++;
 }
 
-const deleteIngredient = () => {
+function  deleteIngredient() {
     const ingredients = document.getElementsByClassName("ingredient");
 
     if (nextIngredientNum === 2 || ingredients.length === 1) {
@@ -138,7 +138,7 @@ const deleteIngredient = () => {
     nextIngredientNum--;
 }
 
-const deleteStep = () => {
+function deleteStep() {
     const steps = document.getElementsByClassName("step");
 
     if (nextStepNum === 2 || steps.length === 1) {

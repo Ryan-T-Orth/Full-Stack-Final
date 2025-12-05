@@ -19,7 +19,7 @@ const quips = [
     "Big Flavor, Little Hassle",
 ];
 
-const loadItems = () => {
+function loadItems() {
     let grid = document.getElementById("recipe-grid");
     grid.innerHTML = '';
     let xhr = new XMLHttpRequest();
@@ -48,7 +48,7 @@ const loadItems = () => {
     xhr.send();
 };
 
-const deleteItem = (id) => {
+function deleteItem(id) {
     if (!confirm("Are you sure you want to delete this recipe?")) return;
     let xhr = new XMLHttpRequest();
     xhr.open("DELETE", `https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items/${id}`);
