@@ -1,3 +1,20 @@
+const escapeMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;',
+    '`': '&#x60;',
+    '=': '&#x3D;'
+}
+
+export function escapeHTML(string) {
+    return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+        return escapeMap[s];
+    });
+}
+
 export function loadRecipe () {
 
     let id = new URLSearchParams(window.location.search).get("id");
@@ -13,7 +30,7 @@ export function loadRecipe () {
         const ingredients = xhr.response.ingredients;
         const steps = xhr.response.steps
         
-        document.getElementById("recipe-name").innerText = name;
+        document.getElementById("recipe-name").innerText = escapeHTML(name);
         document.getElementById("recipe-time").innerText = `${time} Minutes`
         document.getElementById("recipe-servings").innerText = `Makes ${servings} Servings`;
 
@@ -24,7 +41,7 @@ export function loadRecipe () {
             const ingredient = ingredients[i];
 
             const toAdd = document.createElement("li");
-            toAdd.innerHTML = `${ingredient.amount} ${ingredient.measurement} of ${ingredient.name}`;
+            toAdd.innerHTML = `${ingredient.amount} ${ingredient.measurement} of ${escapeHTML(ingredient.name)}`;
 
             ingredientsList.appendChild(toAdd);
         }
@@ -33,7 +50,7 @@ export function loadRecipe () {
             const step = steps[i];
 
             const toAdd = document.createElement("li");
-            toAdd.innerHTML = `${step}`;
+            toAdd.innerHTML = `${escapeHTML(step)}`;
 
             stepsList.appendChild(toAdd);
         }
