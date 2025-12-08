@@ -1,4 +1,4 @@
-const quips = [
+export const quips = [
     "Taste Something New",
     "Find Your Next Favorite",
     "Revisit A Classic",
