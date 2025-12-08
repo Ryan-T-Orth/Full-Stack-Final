@@ -23,14 +23,14 @@
   - [x] Have between 11-15 CSS styles 
 - To get an A- on this project you need to do the following:
   - [ ] You must complete 100% of the requirements of  the B project
-  - [ ] All your forms must properly sanitize user input
+  - [x] All your forms must properly sanitize user input
   - [ ] You must have 80% code coverage of ALL your front end JavaScript
   - [x] You must have at a minimum of 4 different HTML pages that perform distinct functionality.
   - [x] Have between 16-20 CSS styles 
 - To get an A on this project you need to do the following:
   - [ ] You must complete 100% of the requirements of  the A- project
-  - [ ] 100% of your pages MUST get a perfect lighthouse score for accessibility in chrome (NO EXCEPTIONS AT ALL)
-  - [ ] Have 21+ CSS styles  
+  - [x] 100% of your pages MUST get a perfect lighthouse score for accessibility in chrome (NO EXCEPTIONS AT ALL)
+  - [x] Have 21+ CSS styles  
 
 <br>
 <br>

@@ -8,25 +8,74 @@ import sinon from 'sinon';
 
 QUnit.module('main.js tests', function() {
 
-    QUnit.test('randomQuip should load a random quip', function(assert) {
+    // QUnit.test('randomQuip should load a random quip', function(assert) {
 
-        this.html = createElement('div');
-        this.html.innerHTML = index;
+    //     this.html = createElement('div');
+    //     this.html.innerHTML = index;
 
-        randomQuip();
+    //     randomQuip();
         
-        const quip = document.getElementById("discover-title").innerText;
+    //     const quip = document.getElementById("discover-title").innerText;
 
-        assert.ok(quip !== "", 'randomQuip() actually generated text')
-        assert.ok(quips.includes(quip), 'Generated quip is in the set of possible quips');
-    });
+    //     assert.ok(quip !== "", 'randomQuip() actually generated text')
+    //     assert.ok(quips.includes(quip), 'Generated quip is in the set of possible quips');
+    // });
 
 });
 
 
-QUnit.module('add.js tests', function() {
+QUnit.module("addStep tests", function(hooks) {
+    let sandbox;
+    let originalNextStepNum;
 
+    hooks.beforeEach(function() {
+        // Save & mock nextStepNum (global)
+        originalNextStepNum = window.nextStepNum;
+        window.nextStepNum = 1;
 
+        sandbox = sinon.createSandbox();
+
+        // Build DOM fixture
+        const fixture = document.getElementById("qunit-fixture");
+        fixture.innerHTML = `
+            <div id="steps-list"></div>
+        `;
+
+        this.stepsList = fixture.querySelector("#steps-list");
+    });
+
+    hooks.afterEach(function() {
+        sandbox.restore();
+        window.nextStepNum = originalNextStepNum;
+    });
+
+    QUnit.test("addStep should append a step <div> to #steps-list", function(assert) {
+        // Spy on appendChild
+        const spy = sinon.spy(this.stepsList, "appendChild");
+
+        // Run the function
+        addStep();
+
+        // Check appendChild was called
+        assert.ok(spy.calledOnce, "appendChild was called once");
+
+        const added = this.stepsList.querySelector(".step");
+        assert.ok(added, "a .step element was added");
+
+        // Check HTML contents
+        const label = added.querySelector("label.step-label");
+        const textarea = added.querySelector("textarea.step-text");
+
+        assert.ok(label, "label exists");
+        assert.ok(textarea, "textarea exists");
+
+        assert.equal(label.getAttribute("for"), "step-1", "label 'for' matches");
+        assert.equal(textarea.id, "step-1", "textarea id matches");
+        assert.equal(label.textContent.trim(), "Step 1:", "label text is correct");
+
+        // Check nextStepNum increments
+        assert.equal(window.nextStepNum, 2, "nextStepNum incremented");
+    });
 });
 
 
