@@ -19,7 +19,7 @@ const quips = [
     "Big Flavor, Little Hassle",
 ];
 
-function loadItems() {
+export function loadItems() {
     let grid = document.getElementById("recipe-grid");
     grid.innerHTML = '';
     let xhr = new XMLHttpRequest();
@@ -48,7 +48,7 @@ function loadItems() {
     xhr.send();
 };
 
-function deleteItem(id) {
+export function deleteItem(id) {
     if (!confirm("Are you sure you want to delete this recipe?")) return;
     let xhr = new XMLHttpRequest();
     xhr.open("DELETE", `https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items/${id}`);
@@ -56,11 +56,11 @@ function deleteItem(id) {
     xhr.send();
 };
 
-const randomQuip = () => {
+export function randomQuip() {
     document.getElementById("discover-title").innerText = quips[Math.floor(Math.random() * quips.length)];
 };
 
-function onLoad() {
+export function onLoad() {
     randomQuip();
     loadItems();
 };

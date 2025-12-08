@@ -109,5 +109,15 @@
         </form>
     </div>
 
-    <script src="../js/add.js"></script>
+    <script type="module">
+        import { addItem, addIngredient, deleteIngredient, addStep, deleteStep } from "../js/add.js";
+
+        window.addItem = addItem;
+        window.addIngredient = addIngredient;
+        window.deleteIngredient = deleteIngredient;
+        window.addStep = addStep;
+        window. deleteStep = deleteStep;
+    </script>
 </body>
+
+</html>

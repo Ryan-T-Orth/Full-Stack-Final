@@ -38,7 +38,14 @@
 
     </div>
 
-    <script src="js/main.js"></script>
+    <script type="module">
+        import { onLoad, loadItems, deleteItem, randomQuip } from './js/main.js';
+
+        window.onLoad = onLoad;
+        window.loadItems = loadItems;
+        window.deleteItem = deleteItem;
+        window.randomQuip = randomQuip;
+    </script>
 </body>
 
 </html>

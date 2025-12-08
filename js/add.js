@@ -12,13 +12,13 @@ const escapeMap = {
     '=': '&#x3D;'
 }
 
-function escapeHTML(string) {
+export function escapeHTML(string) {
     return String(string).replace(/[&<>"'`=\/]/g, function (s) {
         return escapeMap[s];
     });
 }
 
-function addItem(event) {
+export function addItem(event) {
     event.preventDefault();
 
     const UUID = Date.now();
@@ -75,7 +75,7 @@ function addItem(event) {
     event.target.reset();
 }
 
-function addIngredient() {
+export function addIngredient() {
     const ingredients = document.getElementById("ingredients-list");
     const ingredient = document.createElement("div");
     ingredient.className = "ingredient";
@@ -113,7 +113,7 @@ function addIngredient() {
     nextIngredientNum++;
 }
 
-function addStep() {
+export function addStep() {
     const steps = document.getElementById("steps-list");
     const step = document.createElement("div");
     step.className = "step form-group";
@@ -126,7 +126,7 @@ function addStep() {
     nextStepNum++;
 }
 
-function  deleteIngredient() {
+export function  deleteIngredient() {
     const ingredients = document.getElementsByClassName("ingredient");
 
     if (nextIngredientNum === 2 || ingredients.length === 1) {
@@ -138,7 +138,7 @@ function  deleteIngredient() {
     nextIngredientNum--;
 }
 
-function deleteStep() {
+export function deleteStep() {
     const steps = document.getElementsByClassName("step");
 
     if (nextStepNum === 2 || steps.length === 1) {

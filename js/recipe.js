@@ -1,4 +1,4 @@
-function loadRecipe () {
+export function loadRecipe () {
 
     let id = new URLSearchParams(window.location.search).get("id");
 

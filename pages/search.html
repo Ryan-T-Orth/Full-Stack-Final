@@ -40,5 +40,12 @@
 
     </div>
 
-    <script src="../js/search.js"></script>
+    <script type="module">
+        import { handleSubmit, deleteItem } from "../js/search.js";
+
+        window.handleSubmit = handleSubmit;
+        window.deleteItem = deleteItem;
+    </script>
 </body>
+
+</html>

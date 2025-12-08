@@ -1,4 +1,4 @@
-function handleSubmit(event) {
+export function handleSubmit(event) {
 
     event.preventDefault();
 
@@ -37,7 +37,7 @@ function handleSubmit(event) {
     xhr.send();
 }
 
-const deleteItem = (id) => {
+export function deleteItem(id) {
     if (!confirm("Are you sure you want to delete this recipe?")) return;
     let xhr = new XMLHttpRequest();
     xhr.open("DELETE", `https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items/${id}`);
