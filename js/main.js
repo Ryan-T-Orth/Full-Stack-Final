@@ -57,10 +57,11 @@ export function deleteItem(id) {
 };
 
 export function randomQuip() {
-    document.getElementById("discover-title").innerText = quips[Math.floor(Math.random() * quips.length)];
+    return quips[Math.floor(Math.random() * quips.length)];
 };
 
 export function onLoad() {
-    randomQuip();
+    const quip = randomQuip();
+    document.getElementById("discover-title").innerText = quip;
     loadItems();
 };

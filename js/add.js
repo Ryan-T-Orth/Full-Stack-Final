@@ -1,5 +1,5 @@
-let nextIngredientNum = 2;
-let nextStepNum = 2;
+export let nextIngredientNum = 2;
+export let nextStepNum = 2;
 
 const escapeMap = {
     '&': '&amp;',
@@ -111,6 +111,7 @@ export function addIngredient() {
 
     ingredients.appendChild(ingredient);
     nextIngredientNum++;
+    return ingredient;
 }
 
 export function addStep() {
@@ -124,9 +125,10 @@ export function addStep() {
 
     steps.appendChild(step);
     nextStepNum++;
+    return step;
 }
 
-export function  deleteIngredient() {
+export function deleteIngredient() {
     const ingredients = document.getElementsByClassName("ingredient");
 
     if (nextIngredientNum === 2 || ingredients.length === 1) {
@@ -134,8 +136,10 @@ export function  deleteIngredient() {
         return;
     }
 
-    ingredients[ingredients.length - 1].remove();
+    const ingredientToRemove = ingredients[ingredients.length - 1];
+    ingredientToRemove.remove();
     nextIngredientNum--;
+    return ingredientToRemove;
 }
 
 export function deleteStep() {
@@ -146,6 +150,8 @@ export function deleteStep() {
         return;
     }
 
-    steps[steps.length - 1].remove();
+    const stepToRemove = steps[steps.length - 1];
+    stepToRemove.remove()
     nextStepNum--;
+    return stepToRemove;
 }

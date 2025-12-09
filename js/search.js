@@ -32,6 +32,7 @@ export function handleSubmit(event) {
             results.appendChild(recipeCard);
         }
         console.log(xhr.response);
+        return xhr.response;
     });
     xhr.open("GET", "https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items");
     xhr.send();
