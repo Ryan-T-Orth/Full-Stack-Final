@@ -162,3 +162,21 @@ export function deleteStep() {
     nextStepNum--;
     return stepToRemove;
 }
+
+export const quips = [
+    "Share Your Favorites",
+    "Show Off Your Specialty",
+    "Release The Dish",
+    "Spill The Beans",
+    "Post Your Plate",
+    
+];
+
+export function randomAddQuip() {
+    return quips[Math.floor(Math.random() * quips.length)];
+};
+
+export function onLoad() {
+    const quip = randomAddQuip();
+    document.getElementById("content-title").innerText = quip;
+};
