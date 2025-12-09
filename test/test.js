@@ -1,5 +1,5 @@
 import { randomQuip, quips, deleteItem } from '../js/main.js'
-import { escapeHTMLInput } from '../js/add.js'
+import { escapeHTMLInput, randomAddQuip, addQuips } from '../js/add.js'
 import { escapeHTMLOutput } from '../js/recipe.js'
 import { deleteSearchResult } from '../js/search.js'
 
@@ -114,6 +114,15 @@ QUnit.module('main.js tests', function () {
 
 
 QUnit.module("addStep tests", function () {
+
+    QUnit.test('randomAddQuip should load a random quip for the Add Recipe page', function (assert) {
+
+        const quip = randomAddQuip();
+
+        assert.ok(quip !== "", 'randomQuip() actually generated text')
+        assert.ok(addQuips.includes(quip), 'Generated quip is in the set of possible quips');
+    });
+
     QUnit.test('escapeHTMLInput should escape potentially malicious HTML', function (assert) {
 
         const maliciousString = `<script>evilFunction(malevolentParameter);</script>`;
@@ -155,7 +164,7 @@ QUnit.module('search.js tests', function () {
         //Arrange
         const confirmStub = sinon.stub(globalThis, "confirm");
 
-        deleteItem(123);
+        deleteSearchResult(123);
 
         assert.ok(confirmStub.calledOnce, 'Confirm() was called');
 
@@ -181,7 +190,7 @@ QUnit.module('search.js tests', function () {
         const srqStub = sinon.stub(XMLHttpRequest.prototype, "setRequestHeader");
         const sendStub = sinon.stub(XMLHttpRequest.prototype, "send");
 
-        deleteItem(123);
+        deleteSearchResult(123);
 
         assert.ok(confirmStub.calledOnce, 'Confirm() was called');
         assert.ok(openStub.notCalled, 'xhr.send() did not open a delete request if the user cancels');
@@ -213,7 +222,7 @@ QUnit.module('search.js tests', function () {
         const srqStub = sinon.stub(XMLHttpRequest.prototype, "setRequestHeader");
         const sendStub = sinon.stub(XMLHttpRequest.prototype, "send");
 
-        deleteItem(123);
+        deleteSearchResult(123);
 
         assert.ok(confirmStub.calledOnce, 'Confirm() was called');
 

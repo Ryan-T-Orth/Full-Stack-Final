@@ -163,7 +163,7 @@ export function deleteStep() {
     return stepToRemove;
 }
 
-export const quips = [
+export const addQuips = [
     "Share Your Favorites",
     "Show Off Your Specialty",
     "Release The Dish",
@@ -173,7 +173,7 @@ export const quips = [
 ];
 
 export function randomAddQuip() {
-    return quips[Math.floor(Math.random() * quips.length)];
+    return addQuips[Math.floor(Math.random() * addQuips.length)];
 };
 
 export function onLoad() {
