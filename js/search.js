@@ -26,7 +26,7 @@ export function handleSubmit(event) {
 
             recipeCard.innerHTML = `
                     <a href="${url.toString()}"><h3 class="recipe-name">${recipe.name}</h3></a>
-                    <i type="button" class="material-icons delete-button" onClick="deleteItem(${recipe.id})">delete</i>
+                    <i type="button" class="material-icons delete-button" onClick="deleteSearchResult(${recipe.id})">delete</i>
                     <p class="recipe-time">${recipe.time} Mins</p>`;
 
             results.appendChild(recipeCard);
@@ -38,7 +38,7 @@ export function handleSubmit(event) {
     xhr.send();
 }
 
-export function deleteItem(id) {
+export function deleteSearchResult(id) {
     if (!confirm("Are you sure you want to delete this recipe?")) return;
     let xhr = new XMLHttpRequest();
     xhr.open("DELETE", `https://eq08yo1hu1.execute-api.us-west-2.amazonaws.com/items/${id}`);

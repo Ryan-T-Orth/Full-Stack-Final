@@ -20,6 +20,8 @@ export const quips = [
 ];
 
 export function loadItems() {
+
+    
     let grid = document.getElementById("recipe-grid");
     grid.innerHTML = '';
     let xhr = new XMLHttpRequest();

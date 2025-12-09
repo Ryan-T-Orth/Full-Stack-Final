@@ -22,7 +22,7 @@
   - [x] You must have authored some tests
   - [x] Have between 11-15 CSS styles 
 - To get an A- on this project you need to do the following:
-  - [ ] You must complete 100% of the requirements of  the B project
+  - [x] You must complete 100% of the requirements of  the B project
   - [x] All your forms must properly sanitize user input
   - [x] You must have 80% code coverage of ALL your front end JavaScript
   - [x] You must have at a minimum of 4 different HTML pages that perform distinct functionality.
@@ -33,6 +33,15 @@
   - [x] Have 21+ CSS styles  
 
 <br>
+
+ ## Quick Note About Tests
+ In our email correspondance, you mentioned that a lot of the testing I attempted is not possible with
+ simpler testing tools that we're using in this class and to not worry about testing methods that are
+ outside the possible scope. That's why I've marked the 80% code coverage task completed despite 
+ probably having less than 80% true code coverage. And most of my testable functions are in multiple
+ files for multiple HTML pages, hence some of the repetition in my ```test/test.js``` file. 
+ <br><br>
+ E.g. ```deleteItem()``` and ```deleteSearchResult()``` and ```escapeHTMLInput()``` and ```escapeHTMLOutput()```
 
  ## Project Specification
  The general theme of my final project is going to be a recipe application. It's going to have a page

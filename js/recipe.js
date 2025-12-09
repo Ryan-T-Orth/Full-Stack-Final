@@ -9,7 +9,7 @@ const escapeMap = {
     '=': '&#x3D;'
 }
 
-export function escapeHTML(string) {
+export function escapeHTMLOutput(string) {
     return String(string).replace(/[&<>"'`=\/]/g, function (s) {
         return escapeMap[s];
     });
@@ -30,7 +30,7 @@ export function loadRecipe () {
         const ingredients = xhr.response.ingredients;
         const steps = xhr.response.steps
         
-        document.getElementById("recipe-name").innerText = escapeHTML(name);
+        document.getElementById("recipe-name").innerText = escapeHTMLOutput(name);
         document.getElementById("recipe-time").innerText = `${time} Minutes`
         document.getElementById("recipe-servings").innerText = `Makes ${servings} Servings`;
 
@@ -41,7 +41,7 @@ export function loadRecipe () {
             const ingredient = ingredients[i];
 
             const toAdd = document.createElement("li");
-            toAdd.innerHTML = `${ingredient.amount} ${ingredient.measurement} of ${escapeHTML(ingredient.name)}`;
+            toAdd.innerHTML = `${ingredient.amount} ${ingredient.measurement} of ${escapeHTMLOutput(ingredient.name)}`;
 
             ingredientsList.appendChild(toAdd);
         }
@@ -50,7 +50,7 @@ export function loadRecipe () {
             const step = steps[i];
 
             const toAdd = document.createElement("li");
-            toAdd.innerHTML = `${escapeHTML(step)}`;
+            toAdd.innerHTML = `${escapeHTMLOutput(step)}`;
 
             stepsList.appendChild(toAdd);
         }
