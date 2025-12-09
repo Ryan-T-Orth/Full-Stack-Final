@@ -89,7 +89,7 @@ export function addIngredient() {
 
         <input name="ingredient-name" class="ingredient-name" placeholder="Ingredient" required aria-required>
                     
-        <input name="ingredient-amount" class="ingredient-amount" placeholder="Amount" type="number" min="0.125" step="any" required aria-required>
+        <input name="ingredient-amount" class="ingredient-amount" placeholder="Amount" type="number" min="0.125" max="999" step="any" required aria-required>
    
         <select name="ingredient-measurement" class="ingredient-measurement" aria-placeholder="Measurement" required aria-required>
             <option disabled selected>Measurement</option>
@@ -110,6 +110,7 @@ export function addIngredient() {
                 <option value="Oz">Oz</option>
                 <option value="Lb">Lb</option>
                 <option value="g">g</option>
+                <option value="kg">kg</option>
             </optgroup>
         </select>
         <br>

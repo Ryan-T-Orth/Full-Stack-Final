@@ -37,12 +37,12 @@
 
             <div class="form-group" id="time-container">
                 <label for="time-estimate">Estimated Time (min):</label>
-                <input id="time-estimate" name="time-estimate" type="number" min="1" step="any" required>
+                <input id="time-estimate" name="time-estimate" type="number" min="1" max="999" step="any" required>
             </div>
 
             <div class="form-group" id="servings-container">
                 <label for="recipe-servings">Servings:</label>
-                <input name="recipe-servings" id="recipe-servings" min="1" step="any" type="number" required>
+                <input name="recipe-servings" id="recipe-servings" min="1" max="999" step="any" type="number" required>
             </div>
 
             <div class="form-group" id="ingredients-container">
@@ -51,7 +51,7 @@
                     <div class="ingredient">
                         <input name="ingredient-name" class="ingredient-name" placeholder="Ingredient" required aria-required>
                         
-                        <input name="ingredient-amount" class="ingredient-amount" placeholder="Amount" type="number" min="0.125" step="any" required aria-required>
+                        <input name="ingredient-amount" class="ingredient-amount" placeholder="Amount" type="number" min="0.125" max="999" step="any" required aria-required>
                         
                         
                         <select name="ingredient-measurement" class="ingredient-measurement" aria-label="Ingredient Measurement" required aria-required>
@@ -73,6 +73,7 @@
                                 <option value="Oz">Oz</option>
                                 <option value="Lb">Lb</option>
                                 <option value="g">g</option>
+                                <option value="kg">kg</option>
                             </optgroup>
                         </select>
                         <br>
