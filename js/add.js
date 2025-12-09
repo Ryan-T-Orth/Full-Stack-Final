@@ -44,14 +44,10 @@ export function addItem(event) {
         ingredients.push({ name: `${ingredientName}`, amount: `${ingredientAmount}`, measurement: `${ingredientMeasurement}` });
     }
 
-    console.log(stepsList);
-
     let step;
     for (let i = 0; i < stepsList.length; i++) {
         step = stepsList[i];
-        console.log(step);
         let instruction = escapeHTMLInput(step.value);
-        console.log(instruction);
         steps.push(`${instruction}`);
     }
 
@@ -78,7 +74,6 @@ export function addItem(event) {
 
     
     event.target.reset();
-    window.location.reload();
 }
 
 export function addIngredient() {
@@ -112,6 +107,7 @@ export function addIngredient() {
                 <option value="g">g</option>
                 <option value="kg">kg</option>
             </optgroup>
+            <option value="">No Measurement</option>
         </select>
         <br>
     `;

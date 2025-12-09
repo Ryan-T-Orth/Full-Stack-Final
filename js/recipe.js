@@ -41,7 +41,7 @@ export function loadRecipe () {
             const ingredient = ingredients[i];
 
             const toAdd = document.createElement("li");
-            toAdd.innerHTML = `${ingredient.amount} ${ingredient.measurement} of ${escapeHTMLOutput(ingredient.name)}`;
+            toAdd.innerHTML = ingredient.measurement ? `${ingredient.amount} ${ingredient.measurement} of ${escapeHTMLOutput(ingredient.name)}` :  `${ingredient.amount} ${escapeHTMLOutput(ingredient.name)}`;
 
             ingredientsList.appendChild(toAdd);
         }
