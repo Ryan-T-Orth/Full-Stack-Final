@@ -19,39 +19,20 @@
 - To get an B on this project you need to do the following:
   - [x] You must complete 100% of the requirements of  the B- project
   - [x] You must have each page styled with custom CSS
-  - [ ] You must have authored some tests
+  - [x] You must have authored some tests
   - [x] Have between 11-15 CSS styles 
 - To get an A- on this project you need to do the following:
   - [ ] You must complete 100% of the requirements of  the B project
   - [x] All your forms must properly sanitize user input
-  - [ ] You must have 80% code coverage of ALL your front end JavaScript
+  - [x] You must have 80% code coverage of ALL your front end JavaScript
   - [x] You must have at a minimum of 4 different HTML pages that perform distinct functionality.
   - [x] Have between 16-20 CSS styles 
 - To get an A on this project you need to do the following:
-  - [ ] You must complete 100% of the requirements of  the A- project
+  - [x] You must complete 100% of the requirements of  the A- project
   - [x] 100% of your pages MUST get a perfect lighthouse score for accessibility in chrome (NO EXCEPTIONS AT ALL)
   - [x] Have 21+ CSS styles  
 
 <br>
-<br>
-  
- - Have a landing page (index.html) 
- - Have a form on the index that allows you to submit data to AWS
- - Have a button that retrieves ALL your database entries and displays them on the page
- - Have a way to delete entries
- - You must have a separate page (not on your index.html) with a form that submits data to AWS
- - You must have a way to conditionally retrieve data and display it on a separate page. You can do this any way you wish, 
-   but you can not just return the entire database. 
- - You can include as many extra pages as you wish there is no limit.
- - You must have each page styled with custom CSS
- - You must have authored some tests
- - All your forms must properly sanitize user input
- - You must have 80% code coverage of ALL your front end JavaScript
- - You must have at a minimum of 4 different HTML pages that perform distinct functionality.
- - 100% of your pages MUST get a perfect lighthouse score for accessibility in chrome (NO EXCEPTIONS AT ALL)
- - Have between 21+ CSS styles 
-
- <br>
 
  ## Project Specification
  The general theme of my final project is going to be a recipe application. It's going to have a page
